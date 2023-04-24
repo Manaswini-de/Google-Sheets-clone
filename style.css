@@ -1,0 +1,186 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    height: 100vh;
+}
+
+.title-section{
+    height: 4%; 
+    /* will take 4% height of parent, ie. container*/
+    background-color: #089b56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(244, 247, 249);
+    outline: none;
+}
+
+.menu-bar-section{
+    height: 4%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar-section div{
+    margin-left: 20px;
+    position: relative;
+}
+
+.menu-options-section{
+    display: flex;
+    height: 8%;
+    background-color: #2db073;
+}
+
+.formula-section{
+    height: 4%;
+    background-color: white;
+    display: flex;
+}
+
+.formula-section .selected-cell-div{
+    height: 100%;
+    width: 20%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+}
+
+.formula-section input{
+    /* display: block; */
+    height: 100%;
+    width: 80%;
+    border: 1px solid;
+    outline: none;
+}
+
+.grid{
+    height: 76%;
+    overflow: auto;
+    position: relative;
+}
+
+.sheets-section{
+    height: 4%;
+    background-color: #2db073;
+}
+
+.blank-corner{
+    height: 30px;
+    width: 30px;
+    background-color: gray;
+    position: fixed;
+    top: 20vh;
+    left: 0;
+    z-index: -5;
+    font-family: cursive;
+     /* by default sabki z-index 0 hoti hai, we're giving -ve z-index to this element taaki ye humare UI ke upar na jaaye, aur peeche chup jaaye jab scroll kiya jaye */
+}
+
+.row-number-section{
+    display: inline-block; 
+    position: fixed;
+    top: calc(20vh + 30px);
+    left: 0;
+    z-index: -10;
+}
+
+.row-number{
+    height: 30px;
+    width: 30px;
+    background-color: #089b56;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.column-tag-section{
+    position: fixed; 
+    /*The position CSS property sets how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.*/
+    top: 20vh;
+    left: 30px;
+    height: 30px;
+    display: flex;
+    z-index: -10;
+   
+}
+
+.column-tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80px;
+    flex-shrink: 0;
+    /* Setting the flex-shrink property to 0 means that the flex item will not shrink if the available space in the flex container is not enough to accommodate all the flex items. */
+    background-color: #089b56;
+    color: white;
+    border: none;
+    border-right: 1px solid;
+}
+
+.cell-section{
+    height: calc(76vh - 30px);
+    /* 76vh is the height of grid, if we subtract 30px from it, which is the height of column-tag section, we'll get the height of the cell-section */
+    /* can also be written as calc(100vh - (24vh + 30px)) */
+
+    width: calc(100vw - 30px);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    overflow: auto;
+}
+
+.row{
+    display: flex;
+}
+.cell{
+    height: 30px;
+    width: 80px;
+    flex-shrink: 0;
+    border: 1px solid;
+}
+
+.cell-selected{
+    border: 2px solid blue;
+}
+
+.menu-options-section div{
+    border: 1px solid black;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bold-italics-underline, .align-cell-content, .cell-color-options{
+    width: 23%; 
+}
+
+.font-type-size{
+    width: 31%;
+}
+
+.file-drop-down{
+    position: absolute !Important;
+    background-color: white;
+    left: -1px;
+    top: 46px;
+    width: 4rem;
+    text-align: center;
+    
+}
+
